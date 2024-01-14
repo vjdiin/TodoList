@@ -1,0 +1,7 @@
+<input [(ngModel)]="newTask" placeholder="New Task" />
+<button (click)="addTask()">Add Task</button>
+
+<div *ngFor="let task of tasks$ | async; let i = index">
+    {{ task }}
+    <button (click)="removeTask(i)">Remove</button>
+</div>
