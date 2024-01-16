@@ -7,11 +7,13 @@ import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { todoReducer } from './todo/todo.reducer';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent
+    TodoComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
