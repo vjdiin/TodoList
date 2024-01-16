@@ -1,4 +1,3 @@
-// todo.actions.ts
 import { createAction, props } from '@ngrx/store';
 
 export const addTask = createAction('[Todo] Add ask', props<{ task: string }>());
