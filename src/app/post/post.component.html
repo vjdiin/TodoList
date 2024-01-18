@@ -1,0 +1,6 @@
+<div *ngIf="post$ | async as post">
+    <p>
+        <b>Title:</b> {{ post.title }} <br>
+        <b>Post:</b> {{ post.body }}
+    </p>
+</div>
