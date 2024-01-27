@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { PostService } from './post.service';
+import { Post } from './post.model';
 
 @Component({
   selector: 'app-post',
@@ -8,11 +8,35 @@ import { Observable } from 'rxjs';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  post$: Observable<any>;
+  posts: Post[] = [];
+  newPost: Post = { id: 0, title: '', content: '' };
+  selectedPost: Post | null = null;
 
-  constructor(private store: Store<{ post: { post: any } }>) {
-    this.post$ = this.store.select('post', 'post');
+  constructor(private postService: PostService) { }
+
+  ngOnInit(): void {
+    this.postService.getPosts().subscribe(posts => {
+      this.posts = posts;
+    });
   }
 
-  ngOnInit() { }
+  addPost(): void {
+    this.postService.addPost({ ...this.newPost });
+    this.newPost = { id: 0, title: '', content: '' };
+  }
+
+  updatePost(post: Post): void {
+    this.selectedPost = { ...post };
+  }
+
+  deletePost(postId: number): void {
+    this.postService.deletePost(postId);
+  }
+
+  saveChanges(): void {
+    if (this.selectedPost) {
+      this.postService.updatePost({ ...this.selectedPost });
+      this.selectedPost = null;
+    }
+  }
 }

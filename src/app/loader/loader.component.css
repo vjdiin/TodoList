@@ -1,4 +1,18 @@
 div {
     text-align: center;
-    margin-top: 20px;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 7px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
 }

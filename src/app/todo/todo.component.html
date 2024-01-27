@@ -1,11 +1,13 @@
-<div style="text-align: center; margin-top: 20px;">
-    <input [(ngModel)]="newTask" placeholder="New Task" />
-    <button (click)="addTask()">Add Task</button>
-
-    <br><br>
-
-    <div *ngFor="let task of tasks$ | async; let i = index">
-        {{ task }}
-        <button (click)="removeTask(i)">Remove</button>
+<div class="main">
+    <div class="task-container">
+        <input class="newTask" [(ngModel)]="newTask" placeholder="New Task" />
+        <button class="addBtn" (click)="addTask()">Add Task</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div *ngFor="let task of tasks$ | async; let i = index" class="task-container">
+        <div class="task">{{ task }}</div>
+        <button class="removeBtn" (click)="removeTask(i)">Remove</button>
     </div>
 </div>
