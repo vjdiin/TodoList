@@ -1,4 +1,5 @@
 <div class="main">
+    <button class="fetchpostsBtn" (click)="fetchAPIPosts()">Fetch Laravel Posts</button>
     <div class="newpost">
         <h2>Add a new post:</h2>
         <br>
@@ -11,7 +12,7 @@
     </div>
 
     <div *ngIf="selectedPost" class="savePost">
-        <h2>Update post:</h2>
+        <h2>Edit post:</h2>
         <br>
         <label>Title:</label>
         <input class="saveTitle" [(ngModel)]="selectedPost.title" />
@@ -27,7 +28,7 @@
     <div *ngFor="let post of posts" class="post">
         <h3>{{ post.title }}</h3>
         <p>{{ post.content }}</p>
-        <button class="updateBtn" (click)="updatePost(post)">Update</button>
+        <button class="editBtn" (click)="updatePost(post)">Edit</button>
         <button class="deleteBtn" (click)="deletePost(post.id)">Delete</button>
     </div>
 </div>

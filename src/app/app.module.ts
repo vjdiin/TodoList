@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { todoReducer } from './todo/todo.reducer';
 import { LoaderComponent } from './loader/loader.component';
 import { PostComponent } from './post/post.component';
-import { PostService } from './post/post.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { PostService } from './post/post.service';
     NgbModule,
     FormsModule,
     StoreModule.forRoot({ todo: todoReducer }),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

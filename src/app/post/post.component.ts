@@ -15,6 +15,10 @@ export class PostComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    this.loadPosts();
+  }
+
+  loadPosts(): void {
     this.postService.getPosts().subscribe(posts => {
       this.posts = posts;
     });
@@ -35,8 +39,23 @@ export class PostComponent implements OnInit {
 
   saveChanges(): void {
     if (this.selectedPost) {
-      this.postService.updatePost({ ...this.selectedPost });
+      this.postService.editPost({ ...this.selectedPost });
       this.selectedPost = null;
     }
+  }
+
+  fetchAPIPosts(): void {
+    this.postService.fetchPosts().subscribe(fetchedPosts => {
+      console.log('Fetched posts:', fetchedPosts);
+      if (Array.isArray(fetchedPosts)) {
+        const newPosts = fetchedPosts.filter(fetchedPost => !this.posts.find(localPost => localPost.id === fetchedPost.id));
+        if (newPosts.length > 0) {
+          this.posts = [...this.posts, ...newPosts];
+          this.postService.updatePosts([...this.posts]);
+        }
+      } else {
+        console.error('Invalid data returned from API:', fetchedPosts);
+      }
+    });
   }
 }

@@ -6,6 +6,17 @@ hr {
     border: 2px solid black;
 }
 
+.fetchpostsBtn {
+    background-color: #9900ff;
+    color: #fff;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 4px;
+    height: 99%;
+    align-self: center;
+    margin-left: 15px;
+}
+
 /* newpost */
 
 .newpost {
@@ -16,7 +27,7 @@ hr {
     border-radius: 5px;
     background-color: #f9f9f9;
     width: 35%;
-    margin-left: 10%;
+    margin-left: 4%;
     max-height: 350px;
 }
 
@@ -54,6 +65,49 @@ label {
     font-weight: 400;
 }
 
+/* edit post */
+
+.savePost {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 35%;
+    margin-right: 14.5%;
+    margin-left: auto;
+
+}
+
+.saveTitle {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.saveContent {
+    width: 100%;
+    resize: vertical;
+    min-height: 80px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    resize: none;
+    overflow: auto;
+}
+
+.saveBtn {
+    margin-left: auto;
+    background-color: #00bb48;
+    color: #fff;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 4px;
+}
+
 /* posts */
 
 .postarea {
@@ -86,8 +140,8 @@ label {
     word-wrap: break-word;
 }
 
-.updateBtn {
-    background-color: #007bff;
+.editBtn {
+    background-color: #ffd700;
     color: #fff;
     padding: 8px 12px;
     border: none;
@@ -96,51 +150,9 @@ label {
 }
 
 .deleteBtn {
-    background-color: #007bff;
+    background-color: #ff0000;
     color: #fff;
     padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-}
-
-/* update post */
-
-.savePost {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    width: 35%;
-    margin-right: 10%;
-    margin-left: auto;
-}
-
-.saveTitle {
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.saveContent {
-    width: 100%;
-    resize: vertical;
-    min-height: 80px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    resize: none;
-    overflow: auto;
-}
-
-.saveBtn {
-    margin-left: auto;
-    background-color: #00bb48;
-    color: #fff;
-    padding: 8px 25px;
     border: none;
     border-radius: 4px;
 }
